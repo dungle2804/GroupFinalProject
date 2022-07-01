@@ -66,7 +66,7 @@
                                  </a>
                                 <div class="the-button shop-item-details">
                                     <button type="button" class="btn-std btn-buy shop-item-button">Buy</button>
-                                    <a href="" class="btn-std btn-detail">Details</a> </div>
+                                    <a href="product.php" class="btn-std btn-detail">Details</a> </div>
                             </li>  
                             <?php } ?>                         
                         </ul>
