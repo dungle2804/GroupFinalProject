@@ -61,12 +61,12 @@
                                     <p class="pro-name shop-item-title"><a href="product-details.html"><?php echo $list['name']?></a></p>
                                     <p class="price shop-item-price">1.750.000 VNĐ<del>3.000.000 VNĐ</del></p>
                                 </a>
-                                <a href="product.php?id=<?php echo $list['id']?>">
+                                <a href="keycap.php?id=<?php echo $list['id']?>">
                                             <img src="<?php echo PRODUCT_IMAGE_SITE_PATH.$list['image']?>" alt="product images">
                                  </a>
                                 <div class="the-button shop-item-details">
                                     <button type="button" class="btn-std btn-buy shop-item-button">Buy</button>
-                                    <a href="product.php" class="btn-std btn-detail">Details</a> </div>
+                                    <a href="keycap.php?id=<?php echo $list['id']?>" class="btn-std btn-detail">Details</a> </div>
                             </li>  
                             <?php } ?>                         
                         </ul>
@@ -90,12 +90,12 @@
                                     <p class="pro-name shop-item-title"><a href="product-details.html"><?php echo $list['name']?></a></p>
                                     <p class="price shop-item-price">1.750.000 VNĐ<del>3.000.000 VNĐ</del></p>
                                 </a>
-                                <a href="product.php?id=<?php echo $list['id']?>">
+                                <a href="switch.php?id=<?php echo $list['id']?>">
                                             <img src="<?php echo PRODUCT_IMAGE_SITE_PATH.$list['image']?>" alt="product images">
                                  </a>
                                 <div class="the-button shop-item-details">
                                     <button type="button" class="btn-std btn-buy shop-item-button">Buy</button>
-                                    <a href="" class="btn-std btn-detail">Details</a> </div>
+                                    <a href="switch.php?id=<?php echo $list['id']?>" class="btn-std btn-detail">Details</a> </div>
                             </li>  
                             <?php } ?>                   
                         </ul>
@@ -119,12 +119,12 @@
                                     <p class="pro-name shop-item-title"><a href="product-details.html"><?php echo $list['name']?></a></p>
                                     <p class="price shop-item-price">1.750.000 VNĐ<del>3.000.000 VNĐ</del></p>
                                 </a>
-                                <a href="product.php?id=<?php echo $list['id']?>">
+                                <a href="keyboard.php?id=<?php echo $list['id']?>">
                                             <img src="<?php echo PRODUCT_IMAGE_SITE_PATH.$list['image']?>" alt="product images">
                                  </a>
                                 <div class="the-button shop-item-details">
                                     <button type="button" class="btn-std btn-buy shop-item-button">Buy</button>
-                                    <a href="" class="btn-std btn-detail">Details</a> </div>
+                                    <a href="keyboard.php?id=<?php echo $list['id']?>" class="btn-std btn-detail">Details</a> </div>
                             </li>  
                             <?php } ?>            
                         </ul>
