@@ -19,6 +19,8 @@ while($row=mysqli_fetch_assoc($cat_res)){
     <title>Home</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
+ 
+    
 </head>
 
 <body>
@@ -52,18 +54,13 @@ while($row=mysqli_fetch_assoc($cat_res)){
                  <use xlink:href="symbol-defs.svg#icon-search"/>
                  </svg>
         </button>
-<a href="register.php">
-    <button type="button">Register
-</button>
-</a>
-<a href="login.php">
-   <button type="button">Login
-</button>
-</a>
-<a href="MyAccount.php">
-   <button type="button">My Account
-</button>
-</a>
+        <div class="htc__shopping__cart">
+            				
+                    <a href="cart.php"><i class="icon-handbag icons"></i></a>
+                    <a href="cart.php"><span class="htc__qua"></span></a>
+        </div>
+       
+
 
 
 
@@ -71,3 +68,41 @@ while($row=mysqli_fetch_assoc($cat_res)){
             </div>
         </div>
     </header>
+    <div class="body__overlay"></div>
+    <div class="container-lg">
+        <div class="row">
+            <div class="the-menu col-12 swiper padding-tren-duoi">
+                <div class="swiper-wrapper">
+                    <ul class="reset-list hor-list swiper-slide">
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="keycap_set.php">Keycap set</a></li>
+                        <li><a href="keycap.php">Keycap</a></li>
+                        <li><a href="switch.php">Switch</a></li>
+                        <li><a href="">Mechanical keyboard</a></li>
+                        <li><a href="">Fanpage</a></li>
+                        <li><a href="landing.html">About us</a></li>
+                        <li><a href="">News</a></li>
+                        <li><a href="">Best seller</a></li>
+                        <li><a href="login.php">Login</a></li>
+                        <li><a href="register.php">Register</a></li>
+                        <li><a href="MyAccount.php">My Account</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+    
+    
+    
+    <!-- <a href="register.php">
+    <button type="button">Register
+</button> -->
+<!-- </a>
+<a href="login.php">
+   <button type="button">Login
+</button>
+</a>
+<a href="MyAccount.php">
+   <button type="button">My Account
+</button>
+</a> -->

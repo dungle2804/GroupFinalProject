@@ -16,13 +16,21 @@ if(isset($_SESSION['ADMIN_LOGIN']) && $_SESSION['ADMIN_LOGIN']!=''){
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <title>Dashboard Page</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="assets/css/normalize.css">
+      <!-- <link rel="stylesheet" href="assets/css/normalize.css"> -->
+
+      <!-- nay la cho may cai trong menu admin(layout cac kieu) -->
       <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-      <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-      <link rel="stylesheet" href="assets/css/themify-icons.css">
-      <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css">
-      <link rel="stylesheet" href="assets/css/flag-icon.min.css">
-      <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+      
+      <!-- nay la cho cai icon menu trong admin -->
+      <link rel="stylesheet" href="assets/css/font-awesome.min.css"> 
+
+      
+      <!-- <link rel="stylesheet" href="assets/css/themify-icons.css"> -->
+      <!-- <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css"> -->
+      <!-- <link rel="stylesheet" href="assets/css/flag-icon.min.css"> -->
+      <!-- <link rel="stylesheet" href="assets/css/cs-skin-elastic.css"> -->
+
+      <!-- hu nguyen cai web admin -->
       <link rel="stylesheet" href="assets/css/style.css">
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
    </head>

@@ -1,27 +1,6 @@
 <?php require('top.php')?>
-<div class="body__overlay"></div>
-<div class="container-lg">
-        <div class="row">
-            <div class="the-menu col-12 swiper padding-tren-duoi">
-                <div class="swiper-wrapper">
-                    <ul class="reset-list hor-list swiper-slide">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="Keycap_set.html">Keycap set</a></li>
-                        <li><a href="Keyscap.html">Keycap</a></li>
-                        <li><a href="switch.html">Switch</a></li>
-                        <li><a href="">Mechanical keyboard</a></li>
-                        <li><a href="">Fanpage</a></li>
-                        <li><a href="">Warranty</a></li>
-                        <li><a href="">Community</a></li>
-                        <li><a href="landing.html">About us</a></li>
-                        <li><a href="">Deal</a></li>
-                        <li><a href="">News</a></li>
-                        <li><a href="">Best seller</a></li>
-                        <li><a href="">Brand</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
+
+
             <div class="banner col-12">
                 <div class="swiper banner-truot">
                     <div class="swiper-wrapper">
@@ -33,9 +12,11 @@
                         </a>
                         <a href="" class="swiper-slide b3">
                             <h1 class="font-size">Akko 3108 v2 One Piece – Chopper</h1>
+                          
                         </a>
                         <a href="" class="swiper-slide b4">
                             <h1 class="font-size">Varmilo VA108M Beijing Opera</h1>
+                    
                         </a>
                     </div>
                 </div>
@@ -61,12 +42,12 @@
                                     <p class="pro-name shop-item-title"><a href="product-details.html"><?php echo $list['name']?></a></p>
                                     <p class="price shop-item-price">1.750.000 VNĐ<del>3.000.000 VNĐ</del></p>
                                 </a>
-                                <a href="keycap.php?id=<?php echo $list['id']?>">
+                                <a href="product.php?id=<?php echo $list['id']?>">
                                             <img src="<?php echo PRODUCT_IMAGE_SITE_PATH.$list['image']?>" alt="product images">
                                  </a>
                                 <div class="the-button shop-item-details">
                                     <button type="button" class="btn-std btn-buy shop-item-button">Buy</button>
-                                    <a href="keycap.php?id=<?php echo $list['id']?>" class="btn-std btn-detail">Details</a> </div>
+                                    <a href="" class="btn-std btn-detail">Details</a> </div>
                             </li>  
                             <?php } ?>                         
                         </ul>
@@ -81,8 +62,9 @@
                     <div class="swiper-button-prev d-none d-md-flex"></div>
                     <div class="pro-block-inner swiper shop-items">
                         <ul class="reset-list pro-grid swiper-wrapper">
+                            <li class="swiper-slide ">
                             <?php
-							$get_product=get_product_switch($con,4);
+							$get_product=get_product_switch($con,16);
 							foreach($get_product as $list){
 							?>
                             <li class="swiper-slide ">
@@ -90,12 +72,12 @@
                                     <p class="pro-name shop-item-title"><a href="product-details.html"><?php echo $list['name']?></a></p>
                                     <p class="price shop-item-price">1.750.000 VNĐ<del>3.000.000 VNĐ</del></p>
                                 </a>
-                                <a href="switch.php?id=<?php echo $list['id']?>">
+                                <a href="product.php?id=<?php echo $list['id']?>">
                                             <img src="<?php echo PRODUCT_IMAGE_SITE_PATH.$list['image']?>" alt="product images">
                                  </a>
                                 <div class="the-button shop-item-details">
                                     <button type="button" class="btn-std btn-buy shop-item-button">Buy</button>
-                                    <a href="switch.php?id=<?php echo $list['id']?>" class="btn-std btn-detail">Details</a> </div>
+                                    <a href="" class="btn-std btn-detail">Details</a> </div>
                             </li>  
                             <?php } ?>                   
                         </ul>
@@ -110,23 +92,25 @@
                     <div class="swiper-button-prev d-none d-md-flex"></div>
                     <div class="pro-block-inner swiper shop-items">
                         <ul class="reset-list pro-grid swiper-wrapper">
-                        <?php
+                            <li class="swiper-slide ">
+                            <?php
 							$get_product=get_product_keyboard($con,4);
 							foreach($get_product as $list){
 							?>
-                            <li class="swiper-slide ">
+                               <li class="swiper-slide ">
                                 <a href="">
                                     <p class="pro-name shop-item-title"><a href="product-details.html"><?php echo $list['name']?></a></p>
                                     <p class="price shop-item-price">1.750.000 VNĐ<del>3.000.000 VNĐ</del></p>
                                 </a>
-                                <a href="keyboard.php?id=<?php echo $list['id']?>">
+                                <a href="product.php?id=<?php echo $list['id']?>">
                                             <img src="<?php echo PRODUCT_IMAGE_SITE_PATH.$list['image']?>" alt="product images">
                                  </a>
                                 <div class="the-button shop-item-details">
                                     <button type="button" class="btn-std btn-buy shop-item-button">Buy</button>
-                                    <a href="keyboard.php?id=<?php echo $list['id']?>" class="btn-std btn-detail">Details</a> </div>
+                                    <a href="" class="btn-std btn-detail">Details</a> </div>
                             </li>  
-                            <?php } ?>            
+                            <?php } ?>  
+                            </li>
                         </ul>
                     </div>
                     <div class="swiper-button-next d-none d-md-flex"></div>
@@ -160,7 +144,49 @@
                 </ul>
             </div>
         </div>
-    </div>    
+    </div>
+
+    <!-- <section class="container content-section">
+        <h2 class="section-header">CART</h2>
+        <div class="cart-row">
+            <span class="cart-item cart-header cart-column">ITEM</span>
+            <span class="cart-price cart-header cart-column">PRICE</span>
+            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+        </div>
+        <div class="cart-item">
+            <div class="cart-row">
+                <div class="cart-item cart-column">
+                    <img class="cart-item-image" src="Keycap/sp2.jpg" width="100" height="100">
+                    <span class="cart-item-title">Akko 3108 V2 World Tour Tokyo</span>
+                </div>
+                <span class="cart-price cart-column">$20</span>
+                <div class="cart-quantity cart-column">
+                    <input class="cart-quantity-input" type="number" value="1">
+                    <button class="btn btn-danger" type="button">REMOVE</button>
+                </div>
+            </div>
+
+            <div class="cart-row">
+                <div class="cart-item cart-column">
+                    <img class="cart-item-image" src="phim co/ban_phim.jpg" width="100" height="100">
+                    <span class="cart-item-title">Akko 3108 V2 World Tour Tokyo</span>
+                </div>
+                <span class="cart-price cart-column">$25</span>
+                <div class="cart-quantity cart-column">
+                    <input class="cart-quantity-input" type="number" value="2">
+                    <button class="btn btn-danger" type="button">REMOVE</button>
+                </div>
+            </div>
+        </div>
+        <div class="cart-total">
+            <Strong class="cart-total-title">Total</Strong>
+            <span class="cart-total-price">$0</span>
+        </div>
+        <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+    </section> -->
+
+
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js">
     </script>

@@ -1,129 +1,169 @@
 <?php 
-require('top.php');
-if(isset($_GET['id'])){
-	$product_id=mysqli_real_escape_string($con,$_GET['id']);
-	if($product_id>0){
-		$get_product=get_product_keycap($con,'','',$product_id);
-	}else{
-		?>
-		<script>
-		window.location.href='index.php';
-		</script>
-		<?php
-	}
-}else{
-	?>
-	<script>
-	window.location.href='index.php';
-	</script>
-	<?php
-}
-?>
+include "top.php";
 
- <!-- Start Bradcaump area -->
-        <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(images/bg/4.jpg) no-repeat scroll center center / cover ;">
-            <div class="ht__bradcaump__wrap">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="bradcaump__inner">
-                                <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="index.php">Home</a>
-                                  <span class="brd-separetor"><i class="zmdi zmdi-chevron-right"></i></span>
-                                  <a class="breadcrumb-item" href="categories.php?id=<?php echo $get_product['0']['categories_id']?>"><?php echo $get_product['0']['categories']?></a>
-                                  <span class="brd-separetor"><i class="zmdi zmdi-chevron-right"></i></span>
-                                  <span class="breadcrumb-item active"><?php echo $get_product['0']['name']?></span>
-                                </nav>
-                            </div>
-                        </div>
+?>
+    
+            <div class="banner col-12">
+                <div class="swiper banner-truot">
+                    <div class="swiper-wrapper">
+                        <a href="" class="swiper-slide b1">
+                            <h1 class="font-size">AKKO 3068 v2 2021 Year of the Ox</h1>
+                        </a>
+                        <a href="font-size" class="swiper-slide b2">
+                            <h1 class="font-size">AKKO 3108 v2 Monet’s Pond</h1>
+                        </a>
+                        <a href="" class="swiper-slide b3">
+                            <h1 class="font-size">Akko 3108 v2 One Piece – Chopper</h1>
+                        </a>
+                        <a href="" class="swiper-slide b4">
+                            <h1 class="font-size">Varmilo VA108M Beijing Opera</h1>
+                        </a>
                     </div>
                 </div>
+                <div class="banner-pagination hor-list-center"></div>
+                <div class="top-review d-none d-lg-block">
+                    <a href=""> <img src="QC/QC1.jpg" alt="">Razer green switch được bình chọn là switch tốt nhất 2021</a>
+                    <a href=""> <img src="QC/ban_phim5.jfif" alt="">Trên tay siêu phẩm Varmilo Crane of Lure Keyboard</a>
+                </div>
+            </div>
+            <!-- bat dau sua  -->
+            <div class="pro-block col-12">
+                <h1 class="page-heading">Artisan cây cối</h1>
+                <div class="sp-truot-holder keycap-truot">
+                    <div class="swiper-button-prev d-none d-md-flex"></div>
+                    <div class="pro-block-inner swiper">
+                        <ul class="reset-list pro-grid swiper-wrapper">
+                            <li class="swiper-slide">
+                                <a href=""> <img src="Keycap cay/1.jpg" alt="">
+                                    <p class="pro-name">Keycap Moonlight Flarez</p>
+                                    <p class="price">1.020.000 VNĐ<del>1.800.000 VNĐ</del></p>
+                                </a>
+                                <div class="the-button">
+                                    <button type="button" class="btn-std btn-buy">Buy</button>
+                                    <a href="" class="btn-std btn-detail">Details</a> </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href=""> <img src="Keycap cay/2.jpg" alt="">
+                                    <p class="pro-name">Keycap Terra Flora</p>
+                                    <p class="price">1.020.000 VNĐ<del>1.800.000 VNĐ</del></p>
+                                </a>
+                                <div class="the-button">
+                                    <button type="button" class="btn-std btn-buy">Buy</button>
+                                    <a href="" class="btn-std btn-detail">Details</a> </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href=""> <img src="Keycap cay/3.jpg" alt="">
+                                    <p class="pro-name">Keycap Atlantic Heart</p>
+                                    <p class="price">1.020.000 VNĐ<del>1.800.000 VNĐ</del></p>
+                                </a>
+                                <div class="the-button">
+                                    <button type="button" class="btn-std btn-buy">Buy</button>
+                                    <a href="" class="btn-std btn-detail">Details</a> </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href=""> <img src="Keycap cay/4.jpg" alt="">
+                                    <p class="pro-name">Keycap Engima Bloom</p>
+                                    <p class="price">1.020.000 VNĐ<del>1.800.000 VNĐ</del></p>
+                                </a>
+                                <div class="the-button">
+                                    <button type="button" class="btn-std btn-buy">Buy</button>
+                                    <a href="" class="btn-std btn-detail">Details</a> </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="swiper-button-next d-none d-md-flex"></div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="pro-block col-12">
+                <h1 class="page-heading">Artisan Huy hiệu</h1>
+                <div class="sp-truot-holder switch-truot">
+                    <div class="swiper-button-prev d-none d-md-flex"></div>
+                    <div class="pro-block-inner swiper">
+                        <ul class="reset-list pro-grid swiper-wrapper">
+                            <li class="swiper-slide">
+                                <a href=""> <img src="Keycap huy hieu/1.jpg" alt="">
+                                    <p class="pro-name">KEYCAP CAPTAIN AMERICA HỢP KIM NHÔM</p>
+                                    <p class="price">280.000 VNĐ <del>300.000 VNĐ</del></p>
+                                </a>
+                                <div class="the-button">
+                                    <button type="button" class="btn-std btn-buy">Buy</button>
+                                    <a href="" class="btn-std btn-detail">Details</a> </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href=""> <img src="Keycap huy hieu/2.jpg" alt="">
+                                    <p class="pro-name">KEYCAP LÁ CHẮN VÔ ĐỊCH DOTA2</p>
+                                    <p class="price">280.000 VNĐ <del>300.000 VNĐ</del></p>
+                                </a>
+                                <div class="the-button">
+                                    <button type="button" class="btn-std btn-buy">Buy</button>
+                                    <a href="" class="btn-std btn-detail">Details</a> </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href=""> <img src="Keycap huy hieu/3.jpg" alt="">
+                                    <p class="pro-name">KEYCAP HUY HIỆU THÁCH ĐẤU LOL</p>
+                                    <p class="price">280.000 VNĐ <del>300.000 VNĐ</del></p>
+                                </a>
+                                <div class="the-button">
+                                    <button type="button" class="btn-std btn-buy">Buy</button>
+                                    <a href="" class="btn-std btn-detail">Details</a> </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href=""> <img src="Keycap huy hieu/4.jpg" alt="">
+                                    <p class="pro-name">KEYCAP AVENGER HỢP KIM NHÔM</p>
+                                    <p class="price">280.000 VNĐ <del>300.000 VNĐ</del></p>
+                                </a>
+                                <div class="the-button">
+                                    <button type="button" class="btn-std btn-buy">Buy</button>
+                                    <a href="" class="btn-std btn-detail">Details</a> </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="swiper-button-next d-none d-md-flex"></div>
+                </div>
+            </div>
+
+
+            <!--	  BAT DAU PHAN TRANG-->
+            <div class="col-12">
+                <ul class="reset-list hor-list-center shop-pagination">
+                    <li>
+                        <a href="">
+                            <svg>
+            <use xlink:href="symbol-defs.svg#icon-keyboard_arrow_left"/>
+          </svg>
+                        </a>
+                    </li>
+                    <li class="d-md-none">1/10 </li>
+                    <li class="d-none d-md-block cur-page"><a href="">1</a></li>
+                    <li class="d-none d-md-block"><a href="">2</a></li>
+                    <li class="d-none d-md-block"><a href="">3</a></li>
+                    <li class="d-none d-md-block"><a href="">4</a></li>
+                    <li class="d-none d-md-block"><a href="">5</a></li>
+                    <li class="d-none d-md-block"><a href="">6</a></li>
+                    <li>
+                        <a href="">
+                            <svg>
+            <use xlink:href="symbol-defs.svg#icon-keyboard_arrow_right"/>
+          </svg>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <!-- End Bradcaump area -->
-        <!-- Start Product Details Area -->
-        <section class="htc__product__details bg__white ptb--100">
-            <!-- Start Product Details Top -->
-            <div class="htc__product__details__top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
-                            <div class="htc__product__details__tab__content">
-                                <!-- Start Product Big Images -->
-                                <!-- <div class="product__big__images">
-                                    <div class="portfolio-full-image tab-content">
-                                        <div role="tabpanel" class="tab-pane fade in active" id="img-tab-1">
-                                            <img src="<?php echo PRODUCT_IMAGE_SITE_PATH.$get_product['0']['image']?>" alt="full-image">
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <div>
-                                    <img src="<?php echo PRODUCT_IMAGE_SITE_PATH.$get_product['0']['image']?>" alt="full-image">
-                            </div>
-                                <!-- End Product Big Images -->
-                                
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-lg-7 col-sm-12 col-xs-12 smt-40 xmt-40">
-                            <div class="ht__product__dtl">
-                                <h2><?php echo $get_product['0']['name']?></h2>
-                                <ul  class="pro__prize">
-                                    <li class="old__prize"><?php echo $get_product['0']['mrp']?></li>
-                                    <li><?php echo $get_product['0']['price']?></li>
-                                </ul>
-                                <p class="pro__info"><?php echo $get_product['0']['short_desc']?></p>
-                                <div class="ht__pro__desc">
-                                    <div class="sin__desc">
-                                        <p><span>Availability:</span> In Stock</p>
-                                    </div>
-                                    <div class="sin__desc align--left">
-                                        <p><span>Categories:</span></p>
-                                        <ul class="pro__cat__list">
-                                            <li><a href="#"><?php echo $get_product['0']['categories']?>,</a></li>
-                                        </ul>
-                                    </div>
-                                    
-                                    </div>
-									
-                                </div>
-								<a class="fr__btn" href="#">Add to cart</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Product Details Top -->
-        </section>
-        <!-- End Product Details Area 
-		<!- Start Product Description -->
-        <section class="htc__produc__decription bg__white">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <!-- Start List And Grid View -->
-                        <ul class="pro__details__tab" role="tablist">
-                            <li role="presentation" class="description active"><a href="#description" role="tab" data-toggle="tab">description</a></li>
-                        </ul>
-                        <!-- End List And Grid View -->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="ht__pro__details__content">
-                            <!-- Start Single Content -->
-                            <div role="tabpanel" id="description" class="pro__single__content tab-pane fade in active">
-                                <div class="pro__tab__content__inner">
-                                    <?php echo $get_product['0']['description']?>
-                                </div>
-                            </div>
-                            <!-- End Single Content -->
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Product Description -->
-        
-										
-<?php require('footer.php')?>        
+    </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js">
+    </script>
+    <script src="JavaScript/index.js"></script>
+</body>
+
+</html>
+
+</html>
+
+<?php 
+include "footer.php";
+
+?>
