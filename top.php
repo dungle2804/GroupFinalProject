@@ -86,7 +86,7 @@ while($row=mysqli_fetch_assoc($cat_res)){
                         <li><a href="login.php">Login</a></li>
                         <li><a href="register.php">Register</a></li>
                         <li><a href="MyAccount.php">My Account</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="cart.php">Shopping</a></li>
                     </ul>
                 </div>
             </div>
