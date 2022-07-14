@@ -1,5 +1,5 @@
 <?php 
-require('top.php');
+include('top.php');
 if(isset($_GET['id']) && $_GET['id']!=''){
 	$cat_id=mysqli_real_escape_string($con,$_GET['id']);
 	if($cat_id>0){
@@ -22,7 +22,7 @@ if(isset($_GET['id']) && $_GET['id']!=''){
 <div class="body__overlay"></div>
         
         <!-- Start Bradcaump area -->
-        <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(images/bg/4.jpg) no-repeat scroll center center / cover ;">
+        <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(media/product/Wood.jpg) no-repeat scroll center center / cover ;">
             <div class="ht__bradcaump__wrap">
                 <div class="container">
                     <div class="row">
@@ -98,4 +98,4 @@ if(isset($_GET['id']) && $_GET['id']!=''){
         </section>
         <!-- End Product Grid -->
         <!-- End Banner Area -->
-<?php require('footer.php')?>        
+<?php include('footer.php')?>        

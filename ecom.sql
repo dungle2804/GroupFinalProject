@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 01, 2022 at 08:31 AM
+-- Generation Time: Jul 09, 2022 at 01:34 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -64,30 +64,6 @@ INSERT INTO `categories` (`id`, `categories`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact_us`
---
-
-CREATE TABLE `contact_us` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(75) NOT NULL,
-  `mobile` varchar(15) NOT NULL,
-  `comment` text NOT NULL,
-  `added_on` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `contact_us`
---
-
-INSERT INTO `contact_us` (`id`, `name`, `email`, `mobile`, `comment`, `added_on`) VALUES
-(1, 'Vishal', 'vishal@gmail.com', '1234567890', 'Test Query', '2020-01-14 00:00:00'),
-(2, 'vishal@gmail.com', '', '1234567890', 'testing', '2020-01-19 07:59:38'),
-(3, 'Vishal', 'vishal@gmail.com', '1234567890', 'testing', '2020-01-19 08:00:09');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `product`
 --
 
@@ -119,25 +95,35 @@ INSERT INTO `product` (`id`, `categories_id`, `name`, `mrp`, `price`, `qty`, `im
 (5, 2, 'Blue', 123, 1890000, 12, '440493758_sp4.jpg', '123', '123', '123', '', '123', 1),
 (6, 7, 'ProductX', 12, 123, 12, '261350604_119845920_2.jpg', '123', '123', '123', '', '123', 1),
 (7, 7, 'ProductXyz', 123, 123, 323, '935876053_287733289_3.jpg', '123', '123', '123', '', '123', 1),
-(10, 3, 'cherry1', 123, 10000, 1200, '881816371_cherry1.jpg', 'as', 'as', 'as', 'as', 'as', 1),
-(11, 3, 'cherry2', 0, 9000, 1000, '863103788_cherry2.jpg', 'as', 'as', 'as', 'as', 'as', 1),
-(12, 3, 'Everglide1', 0, 4000, 500, '304295789_Everglide1.jpg', 'as', 'as', 'as', 'as', 'as', 1),
-(13, 3, 'Everglide2', 0, 3500, 1500, '273849285_Everglide2.jpg', 'as', 'as', 'as', 'as', 'as', 1),
-(14, 1, 'keyboard 1', 0, 1300, 123, '608508406_ban_phim.jpg', 'as', 'as', 'as', 'as', 'as', 1),
-(15, 1, 'keyboard 2', 0, 1323, 45, '147454625_ban_phim2.jpg', 'as', 'as', 'as', 'as', 'as', 1),
-(16, 1, 'keyboard3', 0, 123, 23, '941492476_ban_phim3.jpg', 'as', 'as', 'as', 'as', 'as', 1),
-(17, 1, 'keyboard4', 0, 123232, 45, '517642993_ban_phim4.jpg', 'as', 'as', 'as', 'as', 'as', 1),
-(18, 3, 'cherry3', 0, 1000, 1, '457630213_cherry3.jpg', 'abc', '15x15', 'test', 'test2', 'tes3=t3', 1),
-(19, 3, 'Cherry4', 0, 2000, 2, '652151762_cherry4.jpg', 'test', 'test', 'tetete', 'adadadad', 'aaaaa', 1),
-(20, 3, 'Everglide3', 0, 0, 2, '799822491_Everglide3.jpg', 'adv', 'd', 'cc', 'cccc', 'wfwwf', 1),
-(21, 3, 'Everglide4', 0, 3000, 4, '271303048_Everglide4.jpg', 'wef', 'wefwef', 'wef', 'wef', 'ww', 1),
-(22, 3, 'Kailh1', 0, 3000, 1, '492255456_Kailh1.jpg', 'wfvd', 'dff', 'ff', 'ffff', 'ffff', 1),
+(10, 3, 'cherry1', 123, 10000, 1200, '608901635_cherry1.jpg', 'as', 'as', 'as', '', 'as', 1),
+(11, 3, 'cherry2', 0, 9000, 1000, '548570237_cherry2.jpg', 'as', 'as', 'as', '', 'as', 1),
+(12, 3, 'Everglide1', 0, 4000, 500, '774279210_Everglide1.jpg', 'as', 'as', 'as', '', 'as', 1),
+(13, 3, 'Everglide2', 0, 3500, 1500, '915240556_Everglide2.jpg', 'as', 'as', 'as', '', 'as', 1),
+(14, 1, 'keyboard 1', 0, 1300, 123, '166213876_ban_phim.jpg', 'as', 'as', 'as', '', 'as', 1),
+(15, 1, 'keyboard 2', 0, 1323, 45, '740317152_ban_phim2.jpg', 'as', 'as', 'as', '', 'as', 1),
+(16, 1, 'keyboard3', 0, 123, 23, '534536708_ban_phim3.jpg', 'as', 'as', 'as', '', 'as', 1),
+(17, 1, 'keyboard4', 0, 123232, 45, '750384828_ban_phim4.jpg', 'as', 'as', 'as', '', 'as', 0),
+(18, 3, 'cherry3', 0, 1000, 1, '327224851_cherry3.jpg', 'abc', '15x15', 'test', '', 'tes3=t3', 1),
+(19, 3, 'Cherry4', 0, 2000, 2, '465161989_cherry4.jpg', 'test', 'test', 'tetete', '', 'aaaaa', 1),
+(20, 3, 'Everglide3', 0, 0, 2, '556747567_Everglide3.jpg', 'adv', 'd', 'cc', '', 'wfwwf', 1),
+(21, 3, 'Everglide4', 0, 3000, 4, '752206407_Everglide4.jpg', 'wef', 'wefwef', 'wef', '', 'ww', 1),
+(22, 3, 'Kailh1', 0, 3000, 1, '338395650_Kailh1.jpg', 'wfvd', 'dff', 'ff', '', 'ffff', 1),
 (23, 0, 'Kailh2', 0, 20000, 2, '851135137_Kailh2.jpg', 'fw', 'qweqwe', 'vrv', 'jdjd', 'kewkf', 1),
-(24, 3, 'Kailh3', 0, 30000, 3, '435967348_Kailh3.jpg', 'rv', 'hrhh', 'ww', '', 'ttt', 1),
-(25, 3, 'switch', 0, 100000, 1, '590601181_switch.jpg', 'wef', 'wqef', 'ee', 'w', 'heh', 1),
-(26, 3, 'switch2', 0, 320000, 3, '406710748_switch2.jpg', 'fq', 'ef', 'ewfw', 'ewf', 'wf', 1),
-(27, 3, 'switch3', 0, 54000, 5, '324076911_switch3.jpg', 'guhiu', 'bhdhh', 'fbryc', 'hrjcn', 'hvb', 1),
-(28, 0, 'switch4', 0, 60000, 10000000, '338703429_switch4.jpg', 'rfe', 'ewrg', 'werg', 'qwefhwt', 'jig', 1);
+(24, 3, 'Kailh3', 0, 30000, 3, '995685760_Kailh3.jpg', 'rv', 'hrhh', 'ww', '', 'ttt', 1),
+(25, 3, 'switch', 0, 100000, 1, '853736363_switch.jpg', 'wef', 'wqef', 'ee', '', 'heh', 0),
+(26, 3, 'switch2', 0, 320000, 3, '332516111_switch2.jpg', 'fq', 'ef', 'ewfw', '', 'wf', 0),
+(27, 3, 'switch3', 0, 54000, 5, '833173053_switch3.jpg', 'guhiu', 'bhdhh', 'fbryc', '', 'hvb', 0),
+(28, 0, 'switch4', 0, 60000, 10000000, '338703429_switch4.jpg', 'rfe', 'ewrg', 'werg', 'qwefhwt', 'jig', 1),
+(29, 2, 'Keycap Cherry1', 0, 100000, 10, '910198437_cherry1.jpg', 'wefwef', 'kyg', 'hbh', '', 'jbkj', 1),
+(30, 2, 'Keycap Cherry2', 3, 2000000, 20, '741078400_cherry2.jpg', 'wef', 'hghghhgh', 'h3hfhf', '', 'yrhhbb', 1),
+(31, 2, 'Keycap Natalius', 0, 3000000, 25, '682330604_Natalius.png', 'ghke', 'hhhhh', 'rtrttr', '', 'knf', 1),
+(32, 2, 'Keycap Oblivion', 0, 3500000, 15, '447415838_oblivion.jpg', 'fqrg', 'werg', 'erg', '', 'werg', 0),
+(33, 2, 'Keycap sp1', 0, 4000000, 10, '801234172_sp1.jpg', 'eg', 'ergewg', 'jkgkc', '', 'hvj', 0),
+(34, 0, 'Keycap sp2', 0, 3200000, 24, '864147536_sp2.jpg', 'rgq', 'rewgewrg', 'ewrgewg', 'hl', 'hbrfkbg', 1),
+(35, 2, 'Keycap sp3', 0, 5000000, 34, '388176379_sp3.jpg', 'qwf', 'lg', 'qwrfi', '', 'bqhwf', 0),
+(36, 2, 'Keycap sp4', 0, 3400000, 2, '741791155_sp4.jpg', 'wqfe', 'kg', 'nwi', '', 'bqruf', 0),
+(37, 2, 'Keycap sp5', 0, 2300000, 67, '233576116_172832439_sp3.jpg', 'biueef', 'kqwegvf', 'jwegfve', '', 'reg', 1),
+(38, 2, 'Keycap Vilebloom', 0, 5100000, 3, '435964464_160452095_sp1.jpg', 'wef', 'kuhv', 'jhbqfiu', '', 'ouhner', 1);
 
 -- --------------------------------------------------------
 
@@ -159,7 +145,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `password`, `email`, `mobile`, `added_on`) VALUES
-(1, 'Vishal Gupta', '', 'vishal@gmail.com', '1234567890', '2020-01-14 00:00:00');
+(2, 'Hugo', 'Hugogogo3421', 'Hugo123@gmail.com', '123785', '2022-07-07 07:03:27');
 
 --
 -- Indexes for dumped tables
@@ -175,12 +161,6 @@ ALTER TABLE `admin_users`
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `contact_us`
---
-ALTER TABLE `contact_us`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -212,22 +192,16 @@ ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `contact_us`
---
-ALTER TABLE `contact_us`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

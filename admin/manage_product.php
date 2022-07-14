@@ -1,5 +1,5 @@
 <?php
-require('top.inc.php');
+include('top.inc.php');
 $categories_id='';
 $name='';
 $mrp='';
@@ -63,6 +63,7 @@ if(isset($_POST['submit'])){
 			$msg="Product already exist";
 		}
 	}
+	
 	
 	if($_GET['id']==0){
 		if($_FILES['image']['type']!='image/png' && $_FILES['image']['type']!='image/jpg' && $_FILES['image']['type']!='image/jpeg'){
@@ -185,5 +186,5 @@ if(isset($_POST['submit'])){
          </div>
          
 <?php
-require('footer.inc.php');
+include('footer.inc.php');
 ?>

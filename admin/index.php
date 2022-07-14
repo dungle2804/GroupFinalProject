@@ -1,5 +1,5 @@
 <?php
-require('top.inc.php');
+include('top.inc.php');
 ?>
 <div class="content pb-0">
 	<div class="orders">
@@ -15,5 +15,5 @@ require('top.inc.php');
 	</div>
 </div>
 <?php
-require('footer.inc.php');
+include('footer.inc.php');
 ?>

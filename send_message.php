@@ -1,6 +1,6 @@
 <?php
-require('connection.inc.php');
-require('functions.inc.php');
+include('connection.inc.php');
+include('functions.inc.php');
 $name=get_safe_value($con,$_POST['name']);
 $email=get_safe_value($con,$_POST['email']);
 $mobile=get_safe_value($con,$_POST['mobile']);

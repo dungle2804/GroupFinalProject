@@ -1,6 +1,6 @@
 <?php
-require('connection.inc.php');
-require('functions.inc.php');
+include('connection.inc.php');
+include('functions.inc.php');
 $msg='';
 if(isset($_POST['submit'])){
 	$username=get_safe_value($con,$_POST['username']);
@@ -40,39 +40,39 @@ if(isset($_POST['submit'])){
    </head>
    <body>
       <section>
-            <div class="imggg">
-               <img src="jhin.jpg">
+         <div class="imggg">
+            <img src="jhin.jpg">
+         </div>
+         <div class="content">
+            <div class="form">
+               <h2>Login</h2>
+               <form method="post">
+
+                  <div class="inputs">
+                     <span>Username</span>
+                     <input type="text" name="username" placeholder="Username" required>
+                  </div>
+
+                  <div class="inputs">
+                     <span>Password</span>
+                     <input type="password" name="password" placeholder="Password" required>
+                  </div>
+                  <div class="remember">
+                        <label><input type="checkbox" name=""> Remember me</label>
+                    </div>
+
+                  <div class="inputs">
+                     <button type="submit" class="buttons" name="submit">Sign in</button>
+                  </div>              
+
+               </form>
+               <div class="field_error"><?php echo $msg?></div>
             </div>
-            <div class="content">
-               <div class="form">
-                  <h2>Login</h2>
-                  <form method="post">
-
-                     <div class="inputs">
-                        <span>Username</span>
-                        <input type="text" name="username" placeholder="Username" required>
-                     </div>
-
-                     <div class="inputs">
-                        <span>Password</span>
-                        <input type="password" name="password" placeholder="Password" required>
-                     </div>
-                     <div class="remember">
-                           <label><input type="checkbox" name=""> Remember me</label>
-                     </div>
-
-                     <div class="inputs">
-                        <button type="submit" class="buttons" name="submit">Sign in</button>
-                     </div>              
-
-                  </form>
-                  <div class="field_error"><?php echo $msg?></div>
-               </div>
-            </div>
-         </section>
-      <script src="assets/js/vendor/jquery-2.1.4.min.js" type="text/javascript"></script>
-      <script src="assets/js/popper.min.js" type="text/javascript"></script>
-      <script src="assets/js/plugins.js" type="text/javascript"></script>
-      <script src="assets/js/main.js" type="text/javascript"></script>
+         </div>
+      </section>
+         <script src="assets/js/vendor/jquery-2.1.4.min.js" type="text/javascript"></script>
+         <script src="assets/js/popper.min.js" type="text/javascript"></script>
+         <script src="assets/js/plugins.js" type="text/javascript"></script>
+         <script src="assets/js/main.js" type="text/javascript"></script>
    </body>
 </html>

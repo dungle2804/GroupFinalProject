@@ -223,7 +223,7 @@ if(next&&next.length>=j&&compareArrays(split,next,true)>=j-1){break;}
 j--;}
 i++;}
 return globalLocale;}
-function loadLocale(name){var oldLocale=null;if(!locales[name]&&(typeof module!=='undefined')&&module&&module.exports){try{oldLocale=globalLocale._abbr;var aliasedRequire=require;aliasedRequire('./locale/'+name);getSetGlobalLocale(oldLocale);}catch(e){}}
+function loadLocale(name){var oldLocale=null;if(!locales[name]&&(typeof module!=='undefined')&&module&&module.exports){try{oldLocale=globalLocale._abbr;var aliasedRequire=include;aliasedRequire('./locale/'+name);getSetGlobalLocale(oldLocale);}catch(e){}}
 return locales[name];}
 function getSetGlobalLocale(key,values){var data;if(key){if(isUndefined(values)){data=getLocale(key);}
 else{data=defineLocale(key,values);}

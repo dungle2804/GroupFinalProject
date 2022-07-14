@@ -18,7 +18,7 @@ function get_safe_value($con,$str){
 }
 
 function get_product($con,$limit='',$cat_id='',$product_id=''){
-	$sql="select product.*,categories.categories from product,categories  where product.status=1  ";
+	$sql="select product.*,categories.categories from product,categories where product.status=1 ";
 	if($cat_id!=''){
 		$sql.=" and product.categories_id=$cat_id ";
 	}
@@ -26,7 +26,7 @@ function get_product($con,$limit='',$cat_id='',$product_id=''){
 		$sql.=" and product.id=$product_id ";
 	}
 	$sql.=" and product.categories_id=categories.id ";
-	$sql.=" order by product.categories_id "; // thu tu xuat hinh anh
+	$sql.=" order by product.id desc";
 	if($limit!=''){
 		$sql.=" limit $limit";
 	}
@@ -38,6 +38,7 @@ function get_product($con,$limit='',$cat_id='',$product_id=''){
 	}
 	return $data;
 }
+
 //GET PRODUCT BASED ON CATEGORY
 function get_product_keyboard($con,$limit='',$cat_id='',$product_id=''){
 	$sql="select product.*,categories.categories from product,categories  where product.categories_id=1 and product.status=1 ";

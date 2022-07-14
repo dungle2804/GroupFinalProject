@@ -1,108 +1,103 @@
 <?php
-require('connection.inc.php');
-require('functions.inc.php');
+include('connection.inc.php');
+include('functions.inc.php');
+include('add_to_cart.inc.php');
 $cat_res=mysqli_query($con,"select * from categories where status=1 order by categories asc");
 $cat_arr=array();
 while($row=mysqli_fetch_assoc($cat_res)){
 	$cat_arr[]=$row;	
 }
+
+$obj=new add_to_cart();
+$totalProduct=$obj->totalProduct();
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ecom Website</title>
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Comfortaa&display=swap" rel="stylesheet">
-    <title>Home</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/shortcode/shortcodes.css">
     <link rel="stylesheet" href="style.css">
- 
-    
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/custom.css">
+	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+
 </head>
-
 <body>
-    <header>
-        <div class="container-lg">
-            <div class="row">
-                <div class="header-inner col-12">
-                    <button id="n3v" class="d-md-none">
-        <svg>
-          <rect class="rect-top" width="25" height="4" y="4.5" />
-          <rect class="rect-mid" width="25" height="4" y="13" />
-          <rect class="rect-bot" width="25" height="4" y="21.5" />
-        </svg>
-        </button>
-                    <a href="index.php"><img src="Logo.svg" alt="" class="hinh-logo"></a>
-                    <button id="btn-search" class="d-md-none">
-        <svg class="icon-search">
-          <use xlink:href="symbol-defs.svg#icon-search"/>
-        </svg>
-        <svg class="icon-close">
-          <rect class="rect-top" width="25" height="4" y="4.5" />
-          <rect class="rect-bot" width="25" height="4" y="21.5" />
-        </svg>
-        
-        </button>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->  
 
-                    <form action="" class="frm-sch">
-                        <input type="search" placeholder="Tìm kiếm">
-                        <button type="submit">
-                 <svg>
-                 <use xlink:href="symbol-defs.svg#icon-search"/>
-                 </svg>
-        </button>
-        <div class="htc__shopping__cart">
-            				
-                    <a href="cart.php"><i class="icon-handbag icons"></i></a>
-                    <a href="cart.php"><span class="htc__qua"></span></a>
-        </div>
-       
+    <!-- Body main wrapper start -->
+    <div class="wrapper">
+        <header id="htc__header" class="htc__header__area header--one">
+            <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="menumenu__container clearfix">
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-5"> 
+                                <div class="logo">
+                                     <a href="index.php"><img src="media/product/Logo.png" alt="logo images"></a>
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-lg-7 col-sm-5 col-xs-3">
+                                <nav class="main__menu__nav hidden-xs hidden-sm">
+                                    <ul class="main__menu">
+                                        <li class="drop"><a href="index.php">Home</a></li>
+                                        <?php
+										foreach($cat_arr as $list){
+											?>
+											<li><a href="categories.php?id=<?php echo $list['id']?>"><?php echo $list['categories']?></a></li>
+											<?php
+										}
+										?>
+                                        <li><a href="contact.php">contact</a></li>
+                                    </ul>
+                                </nav>
 
-
-
-
+                                <div class="mobile-menu clearfix visible-xs visible-sm">
+                                    <nav id="mobile_dropdown">
+                                        <ul>
+                                            <li><a href="index.php">Home</a></li>
+                                            <?php
+											foreach($cat_arr as $list){
+												?>
+												<li><a href="categories.php?id=<?php echo $list['id']?>"><?php echo $list['categories']?></a></li>
+												<?php
+											}
+											?>
+                                            <li><a href="contact.php">contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>  
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4">
+                                <div class="header__right">
+                                    <div class="header__account">
+                                        <?php if(isset($_SESSION['USER_LOGIN'])){
+											echo '<a href="logout.php">Logout</a> <a href="my_order.php">My Order</a>';
+										}else{
+											echo '<a href="login.php">Login/Register</a>';
+										}
+										?>
+										
+                                    </div>
+                                    <div class="htc__shopping__cart">
+                                        <a class="cart__menu" href="#"><i class="icon-handbag icons"></i></a>
+                                        <a href="cart.php"><span class="htc__qua"><?php echo $totalProduct?></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-menu-area"></div>
                 </div>
             </div>
-        </div>
-    </header>
-    <div class="body__overlay"></div>
-    <div class="container-lg">
-        <div class="row">
-            <div class="the-menu col-12 swiper padding-tren-duoi">
-                <div class="swiper-wrapper">
-                    <ul class="reset-list hor-list swiper-slide">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="keycap_set.php">Keycap set</a></li>
-                        <li><a href="keycap.php">Keycap</a></li>
-                        <li><a href="switch.php">Switch</a></li>
-                        <li><a href="">Mechanical keyboard</a></li>
-                        <li><a href="">Fanpage</a></li>
-                        <li><a href="landing.html">About us</a></li>
-                        <li><a href="">News</a></li>
-                        <li><a href="">Best seller</a></li>
-                        <li><a href="login.php">Login</a></li>
-                        <li><a href="register.php">Register</a></li>
-                        <li><a href="MyAccount.php">My Account</a></li>
-                        <li><a href="cart.php">Shopping</a></li>
-                    </ul>
-                </div>
-            </div>
-    
-    
-    
-    
-    <!-- <a href="register.php">
-    <button type="button">Register
-</button> -->
-<!-- </a>
-<a href="login.php">
-   <button type="button">Login
-</button>
-</a>
-<a href="MyAccount.php">
-   <button type="button">My Account
-</button>
-</a> -->
+        </header>

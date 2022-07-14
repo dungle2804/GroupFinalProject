@@ -1,5 +1,5 @@
 <?php
-require('top.inc.php');
+include('top.inc.php');
 $categories='';
 $msg='';
 if(isset($_GET['id']) && $_GET['id']!=''){
@@ -68,5 +68,5 @@ if(isset($_POST['submit'])){
          </div>
          
 <?php
-require('footer.inc.php');
+include('footer.inc.php');
 ?>

@@ -1,6 +1,6 @@
 <?php
-require('connection.inc.php');
-require('functions.inc.php');
+include('connection.inc.php');
+include('functions.inc.php');
 if(isset($_SESSION['ADMIN_LOGIN']) && $_SESSION['ADMIN_LOGIN']!=''){
 
 }else{
@@ -16,21 +16,13 @@ if(isset($_SESSION['ADMIN_LOGIN']) && $_SESSION['ADMIN_LOGIN']!=''){
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <title>Dashboard Page</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- <link rel="stylesheet" href="assets/css/normalize.css"> -->
-
-      <!-- nay la cho may cai trong menu admin(layout cac kieu) -->
+      <link rel="stylesheet" href="assets/css/normalize.css">
       <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-      
-      <!-- nay la cho cai icon menu trong admin -->
-      <link rel="stylesheet" href="assets/css/font-awesome.min.css"> 
-
-      
-      <!-- <link rel="stylesheet" href="assets/css/themify-icons.css"> -->
-      <!-- <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css"> -->
-      <!-- <link rel="stylesheet" href="assets/css/flag-icon.min.css"> -->
-      <!-- <link rel="stylesheet" href="assets/css/cs-skin-elastic.css"> -->
-
-      <!-- hu nguyen cai web admin -->
+      <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+      <link rel="stylesheet" href="assets/css/themify-icons.css">
+      <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css">
+      <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+      <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
       <link rel="stylesheet" href="assets/css/style.css">
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
    </head>
@@ -47,13 +39,7 @@ if(isset($_SESSION['ADMIN_LOGIN']) && $_SESSION['ADMIN_LOGIN']!=''){
                      <a href="product.php" > Product Master</a>
                   </li>
 				  <li class="menu-item-has-children dropdown">
-                     <a href="#" > Order Master</a>
-                  </li>
-				  <li class="menu-item-has-children dropdown">
                      <a href="users.php" > User Master</a>
-                  </li>
-				  <li class="menu-item-has-children dropdown">
-                     <a href="contact_us.php" > Contact Us</a>
                   </li>
 				  
                </ul>
@@ -64,8 +50,8 @@ if(isset($_SESSION['ADMIN_LOGIN']) && $_SESSION['ADMIN_LOGIN']!=''){
          <header id="header" class="header">
             <div class="top-left">
                <div class="navbar-header">
-                  <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="Logo"></a>
-                  <a class="navbar-brand hidden" href="index.php"><img src="images/logo2.png" alt="Logo"></a>
+                  <a class="navbar-brand" href="index.php"><img src="" alt="Home"></a>
+                  <a class="navbar-brand hidden" href="index.php"><img src="" alt="Home"></a>
                   <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                </div>
             </div>
